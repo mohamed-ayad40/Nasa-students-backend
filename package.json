@@ -4,7 +4,9 @@
   "main": "server.js",
   "type": "module",
   "scripts": {
-    "start": "nodemon server.js"
+    "start": "nodemon server.js",
+    "build": "prisma generate",
+    "postinstall": "prisma generate"
   },
   "author": "Mohamed Ayad",
   "license": "ISC",
