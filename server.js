@@ -30,7 +30,8 @@ app.use(cors({
     origin: ["http://localhost:5500", "http://127.0.0.1:5500", "https://husseinashraf10.github.io/My-Nasa-solar-system"],
     methods: "GET,POST,PUT,PATCH,DELETE",
     credentials: true,
-    preflightContinue: true
+    allowedHeaders: ["Content-Type", "Authorization"],  // Ensure these headers are allowed
+    exposedHeaders: ["Authorization"],  // Expose the Authorization header if you're using it
 }))
 
 app.use("/auth", authRouter);
