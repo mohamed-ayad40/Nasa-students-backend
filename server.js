@@ -26,7 +26,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 app.use(cors({
-    origin: ["http://localhost:5500", "http://127.0.0.1:5500"],
+    origin: ["http://localhost:5500", "http://127.0.0.1:5500", "https://husseinashraf10.github.io/My-Nasa-solar-system"],
     methods: "GET,POST,PUT,PATCH,DELETE",
     credentials: true,
 }))
