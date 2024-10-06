@@ -18,8 +18,9 @@ app.use(
     session({
         secret: "nasa+space+teams",
         resave: false,
+        proxy: true,
         saveUninitialized: false,
-        cookie: { secure: false, maxAge: 24 * 60 * 60 * 1000 }  // secure: true if using HTTPS
+        cookie: { secure: true, maxAge: 24 * 60 * 60 * 1000, httpOnly: true}  // secure: true if using HTTPS
     })
 )
 app.use(passport.initialize());
@@ -29,6 +30,7 @@ app.use(cors({
     origin: ["http://localhost:5500", "http://127.0.0.1:5500", "https://husseinashraf10.github.io/My-Nasa-solar-system"],
     methods: "GET,POST,PUT,PATCH,DELETE",
     credentials: true,
+    preflightContinue: true
 }))
 
 app.use("/auth", authRouter);
